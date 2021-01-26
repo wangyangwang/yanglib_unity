@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [ExecuteInEditMode]
 public class IllumCameraController : MonoBehaviour
@@ -44,6 +42,7 @@ public class IllumCameraController : MonoBehaviour
 
         if (GUI.Button(new Rect(0, presets.Length * buttonHeight, buttonWidth, buttonHeight), "Capture Screenshot"))
         {
+
             CaptureScreenshot(currentCamPreset);
         }
     }
@@ -56,6 +55,7 @@ public class IllumCameraController : MonoBehaviour
         filename = filename.Replace("/", "_");
         filename = filename.Replace(" ", "_");
         filename = filename.Replace(":", "_");
-        ScreenCapture.CaptureScreenshot("C:/Users/YW/Desktop/" + filename + "__" + additionalString + ".png");
+        int superSize = Screen.width < 3000 ? 2 : 1;
+        ScreenCapture.CaptureScreenshot("C:/Users/YW/Desktop/" + filename + "__" + additionalString + ".png", superSize);
     }
 }

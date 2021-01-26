@@ -1,9 +1,8 @@
-﻿using UnityEditor;
-using UnityEditor.EditorTools;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using UnityEditor;
+using UnityEngine;
 
 public class MaterialAssigner : EditorWindow
 {
@@ -51,7 +50,7 @@ public class MaterialAssigner : EditorWindow
 
         if (matInfos == null) return;
         EditorGUILayout.BeginVertical();
-       scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
+        scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
         for (int i = 0; i < matInfos.Count; i++)
         {
 

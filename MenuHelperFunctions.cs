@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Linq;
 using UnityEditor;
-using System.Linq;
+using UnityEngine;
 
 
 
@@ -37,11 +35,14 @@ public class MenuHelperFunctions : MonoBehaviour
         }
     }
 
-    public void DeleteCloned(){
+    public void DeleteCloned()
+    {
         var children = transform.GetComponentsInChildren<Transform>().ToList();
         children.Remove(transform);
-        foreach(var c in children){
-            if(c.name.Contains("(Clone)")){
+        foreach (var c in children)
+        {
+            if (c.name.Contains("(Clone)"))
+            {
                 DestroyImmediate(c.gameObject);
             }
         }
@@ -63,7 +64,7 @@ public class HelperFunctonsEditor : Editor
             ins.AddMeshToChildren();
         }
 
-         if (GUILayout.Button("remove Clones"))
+        if (GUILayout.Button("remove Clones"))
         {
             ins.DeleteCloned();
         }
