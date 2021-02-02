@@ -15,6 +15,7 @@ public class IllumCameraController : MonoBehaviour
     public Cam[] cameras;
     string activeCam;
     public bool showControl;
+    public int superSize = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -61,7 +62,7 @@ public class IllumCameraController : MonoBehaviour
         filename = filename.Replace("/", "_");
         filename = filename.Replace(" ", "_");
         filename = filename.Replace(":", "_");
-        int superSize = Screen.width < 3000 ? 2 : 1;
+      
         ScreenCapture.CaptureScreenshot("C:/Users/YW/Desktop/" + filename + "__" + additionalString + ".png", superSize);
     }
 }
