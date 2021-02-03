@@ -46,6 +46,11 @@ public class IllumCameraController : MonoBehaviour
                 cameras[i].cam.gameObject.SetActive(true);
                 activeCam = cameras[i].name;
             }
+
+            if (GUI.Button(new Rect(buttonWidth, i * buttonHeight, buttonWidth / 3f, buttonHeight), "select"))
+            {
+                UnityEditor.Selection.activeObject = cameras[i].cam.gameObject;
+            }
         }
 
         if (GUI.Button(new Rect(0, cameras.Length * buttonHeight, buttonWidth, buttonHeight), "Capture Screenshot"))
@@ -62,7 +67,7 @@ public class IllumCameraController : MonoBehaviour
         filename = filename.Replace("/", "_");
         filename = filename.Replace(" ", "_");
         filename = filename.Replace(":", "_");
-      
+
         ScreenCapture.CaptureScreenshot("C:/Users/YW/Desktop/" + filename + "__" + additionalString + ".png", superSize);
     }
 }
