@@ -17,7 +17,7 @@ public class MaterialAssigner : EditorWindow
         public string namePattern;
     }
 
-    public List<MatInfo> matInfos;
+    public List<MatInfo> matInfos = new List<MatInfo>();
     Vector2 scrollPos;
 
 
@@ -25,6 +25,7 @@ public class MaterialAssigner : EditorWindow
     [MenuItem("Helper/Material Assigner")]
     static void Init()
     {
+       
         // Get existing open window or if none, make a new one:
         MaterialAssigner window = (MaterialAssigner)EditorWindow.GetWindow(typeof(MaterialAssigner));
         window.Show();

@@ -38,16 +38,19 @@ public class IllumCameraController : MonoBehaviour
         int buttonHeight = Screen.height / 20;
         int buttonWidth = Screen.width / 10;
 
+        GUIStyle buttonStyle = new GUIStyle(GUI.skin.button);
+        buttonStyle.fontSize =  (int)(Screen.width / 100);
+
         for (int i = 0; i < cameras.Length; i++)
         {
-            if (GUI.Button(new Rect(0, i * buttonHeight, buttonWidth, buttonHeight), cameras[i].name))
+            if (GUI.Button(new Rect(0, i * buttonHeight, buttonWidth, buttonHeight), cameras[i].name,buttonStyle))
             {
                 foreach (var c in cameras) { c.cam.gameObject.SetActive(false); }
                 cameras[i].cam.gameObject.SetActive(true);
                 activeCam = cameras[i].name;
             }
 
-            if (GUI.Button(new Rect(buttonWidth, i * buttonHeight, buttonWidth / 3f, buttonHeight), "select"))
+            if (GUI.Button(new Rect(buttonWidth, i * buttonHeight, buttonWidth / 3f, buttonHeight), "select", buttonStyle))
             {
                 UnityEditor.Selection.activeObject = cameras[i].cam.gameObject;
             }

@@ -20,20 +20,26 @@ public class SelectObjectWithRenders : ScriptableWizard
     [MenuItem("Helper/GetLightTransformIntoMaterials")]
     static void GetLightTransformIntoMaterials()
     {
-        var allLights = GameObject.FindObjectsOfType<Transform>();
-        foreach (var l in allLights)
+        
+        var selected = Selection.activeTransform;
+
+        if (selected.name.Contains("LIGHT") == false)
         {
-            if (l.name.Contains("LIGHT"))
-            {
-                var parent = l.transform.parent;
-                var sibilings = parent.GetComponentsInChildren<Renderer>();
-                foreach (var rend in sibilings)
-                {
-                    rend.sharedMaterial.SetInt("_USEMYLIGHTDIR", 1);
-                    rend.sharedMaterial.SetVector("_MyLightDir", l.transform.position);
-                }
-            }
+            Debug.Log("selection is not LIGHT");
+            return;
         }
+
+        Vector3 lightPos = selected.localPosition;
+
+        var parent = selected.parent;
+        var sibilings = parent.GetComponentsInChildren<Renderer>();
+
+        foreach (var rend in sibilings)
+        {
+            rend.sharedMaterial.SetVector("_MyLightPos", lightPos);
+        }
+
+     
     }
 
 
