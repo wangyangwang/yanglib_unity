@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12001, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: New GUISkin
+  m_Name: GUISkin
   m_EditorClassIdentifier: 
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_box:
@@ -150,15 +150,15 @@ MonoBehaviour:
   m_toggle:
     m_Name: toggle
     m_Normal:
-      m_Background: {fileID: 0}
+      m_Background: {fileID: 2800000, guid: c8f5e2eadcb463a42997db56da82ab57, type: 3}
       m_ScaledBackgrounds: []
-      m_TextColor: {r: 0.89112896, g: 0.89112896, b: 0.89112896, a: 1}
+      m_TextColor: {r: 1, g: 1, b: 1, a: 1}
     m_Hover:
-      m_Background: {fileID: 11014, guid: 0000000000000000e000000000000000, type: 0}
+      m_Background: {fileID: 2800000, guid: c4113d7e9220743428ae08529a3db7ca, type: 3}
       m_ScaledBackgrounds: []
       m_TextColor: {r: 1, g: 1, b: 1, a: 1}
     m_Active:
-      m_Background: {fileID: 11013, guid: 0000000000000000e000000000000000, type: 0}
+      m_Background: {fileID: 0}
       m_ScaledBackgrounds: []
       m_TextColor: {r: 1, g: 1, b: 1, a: 1}
     m_Focused:
@@ -166,15 +166,15 @@ MonoBehaviour:
       m_ScaledBackgrounds: []
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_OnNormal:
-      m_Background: {fileID: 11016, guid: 0000000000000000e000000000000000, type: 0}
+      m_Background: {fileID: 2800000, guid: d581c84c64af28f4b9d438ad3158aa60, type: 3}
       m_ScaledBackgrounds: []
       m_TextColor: {r: 0.8901961, g: 0.8901961, b: 0.8901961, a: 1}
     m_OnHover:
-      m_Background: {fileID: 11015, guid: 0000000000000000e000000000000000, type: 0}
+      m_Background: {fileID: 0}
       m_ScaledBackgrounds: []
       m_TextColor: {r: 1, g: 1, b: 1, a: 1}
     m_OnActive:
-      m_Background: {fileID: 11017, guid: 0000000000000000e000000000000000, type: 0}
+      m_Background: {fileID: 2800000, guid: d581c84c64af28f4b9d438ad3158aa60, type: 3}
       m_ScaledBackgrounds: []
       m_TextColor: {r: 1, g: 1, b: 1, a: 1}
     m_OnFocused:
@@ -182,24 +182,24 @@ MonoBehaviour:
       m_ScaledBackgrounds: []
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_Border:
-      m_Left: 20
+      m_Left: 0
       m_Right: 0
-      m_Top: 20
+      m_Top: 0
       m_Bottom: 0
     m_Margin:
-      m_Left: 10
-      m_Right: 10
-      m_Top: 10
-      m_Bottom: 10
-    m_Padding:
-      m_Left: 15
+      m_Left: 0
       m_Right: 0
-      m_Top: 3
+      m_Top: 0
+      m_Bottom: 0
+    m_Padding:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
       m_Bottom: 0
     m_Overflow:
-      m_Left: -1
+      m_Left: 0
       m_Right: 0
-      m_Top: -4
+      m_Top: 0
       m_Bottom: 0
     m_Font: {fileID: 0}
     m_FontSize: 30
@@ -208,10 +208,10 @@ MonoBehaviour:
     m_WordWrap: 0
     m_RichText: 0
     m_TextClipping: 0
-    m_ImagePosition: 0
-    m_ContentOffset: {x: 0, y: 0}
-    m_FixedWidth: 0
-    m_FixedHeight: 0
+    m_ImagePosition: 1
+    m_ContentOffset: {x: 45.06, y: -3.4}
+    m_FixedWidth: 30
+    m_FixedHeight: 30
     m_StretchWidth: 1
     m_StretchHeight: 1
   m_label:

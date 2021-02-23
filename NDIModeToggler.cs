@@ -32,6 +32,6 @@ public class NDIModeToggler : MonoBehaviour
 
     private void OnGUI()
     {
-        useNDICams = GUI.Toggle(new Rect(300,0,100,20), useNDICams, "use RenderTexture cams", skin.GetStyle("toggle"));
+        useNDICams = GUI.Toggle(new Rect(0,Screen.height-100,300,100), useNDICams, "use RenderTexture cams", skin.GetStyle("toggle"));
     }
 }
