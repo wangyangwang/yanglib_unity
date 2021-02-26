@@ -10,8 +10,7 @@ public class NDIModeToggler : MonoBehaviour
     public bool useNDICams;
     public Camera[] NDICams;
     public Transform NDISenderContainer;
-    public GUISkin skin;
-
+    public GUISkin skin;    
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +31,7 @@ public class NDIModeToggler : MonoBehaviour
 
     private void OnGUI()
     {
+        if (!GlobalStaticVars.showGUI) return;
         useNDICams = GUI.Toggle(new Rect(0,Screen.height-100,300,100), useNDICams, "use RenderTexture cams", skin.GetStyle("toggle"));
     }
 }

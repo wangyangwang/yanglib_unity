@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-
+using System.Collections;
+using System.Collections.Generic;
 using UnityEditor;
 
 [ExecuteInEditMode]
@@ -30,11 +31,12 @@ public class IllumCameraController : MonoBehaviour
 
     }
 
-
+    
 
     void OnGUI()
     {
         if (!showControl) return;
+        if (!GlobalStaticVars.showGUI) return;
         int buttonHeight = Screen.height / 20;
         int buttonWidth = Screen.width / 10;
 
@@ -58,23 +60,35 @@ public class IllumCameraController : MonoBehaviour
 
         if (GUI.Button(new Rect(0, cameras.Length * buttonHeight, buttonWidth, buttonHeight), "Capture Screenshot"))
         {
-            CaptureScreenshot(activeCam);
+            StartCoroutine(GoCapture(activeCam));
         }
     }
 
 
+    
 
     public void CaptureScreenshot(string additionalString)
     {
+        
         string filename = System.DateTime.Now.ToString();
         filename = filename.Replace("/", "_");
         filename = filename.Replace(" ", "_");
         filename = filename.Replace(":", "_");
 
         ScreenCapture.CaptureScreenshot("C:/Users/YW/Desktop/" + filename + "__" + additionalString + ".png", superSize);
+       
     }
-}
 
+    IEnumerator GoCapture(string additionalString)
+    {
+        GlobalStaticVars.showGUI = false;
+        yield return new WaitForEndOfFrame();
+        CaptureScreenshot(additionalString);
+        GlobalStaticVars.showGUI = true;
+
+    }
+    
+}
 
 
 
