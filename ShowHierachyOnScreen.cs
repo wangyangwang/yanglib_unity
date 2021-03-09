@@ -27,7 +27,7 @@ public class ShowHierachyOnScreen : MonoBehaviour
    
 
         var o = UnityEditor.Selection.activeTransform;
-        if (o == null  || o.GetComponent<Renderer>()==null) return;
+        if (o == null) return;
         hierachy = o.name + "\n";
 
         string prefix = "-";
